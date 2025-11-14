@@ -26,15 +26,9 @@ print("✅ Modelo cargado exitosamente!\n")
 # FUNCIÓN PARA SELECCIONAR IMAGEN
 # ============================================
 def select_image():
-    """
-    Abre un explorador de archivos para seleccionar una imagen
-    
-    Returns:
-        str: ruta de la imagen seleccionada o None si se cancela
-    """
     root = Tk()
-    root.withdraw()  # Ocultar ventana principal de Tkinter
-    root.wm_attributes('-topmost', 1)  # Poner ventana al frente
+    root.withdraw() 
+    root.wm_attributes('-topmost', 1) 
     
     print("\n📂 Abriendo explorador de archivos...")
     
@@ -61,16 +55,6 @@ def select_image():
 # FUNCIÓN PARA PREDECIR
 # ============================================
 def predict_dog_breed(image_path, show_plot=True):
-    """
-    Predice la raza de un perro desde una imagen
-    
-    Args:
-        image_path: ruta de la imagen (ej: 'mi_perro.jpg')
-        show_plot: si mostrar la imagen con el resultado
-    
-    Returns:
-        tuple: (raza_predicha, confianza)
-    """
     try:
         # Cargar y preprocesar la imagen
         img = load_img(image_path, target_size=(IMG_SIZE, IMG_SIZE))
@@ -135,10 +119,7 @@ def predict_dog_breed(image_path, show_plot=True):
 # ============================================
 # FUNCIÓN PARA PREDECIR MÚLTIPLES IMÁGENES
 # ============================================
-def predict_multiple_images(image_paths):
-    """
-    Predice múltiples imágenes y muestra un resumen
-    """
+def predict_multiple_images(image_paths):    
     results = []
     
     for img_path in image_paths:
